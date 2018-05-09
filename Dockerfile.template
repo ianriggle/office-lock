@@ -15,6 +15,9 @@ RUN apt-get update && apt-get install -yq \
 # Set our working directory
 WORKDIR /usr/src/app
 
+# Get and install Setup Tools 5.7
+RUN wget https://files.pythonhosted.org/packages/08/1b/cfcdd4381459c3967a08dd3b7c16b7f10a5bfb8ad5c40b56f8ee4a25e8d7/setuptools-5.7.zip#sha256=ee237004dcc73570f19a23ef07b2fe3cdbe75f9bdd125eb024a895b521a398ef && unzip setuptools-5.7.zip && cd setuptools-5.7 && python setup.py install
+
 # Install neopixel library
 RUN git clone https://github.com/jgarff/rpi_ws281x.git && cd rpi_ws281x && scons && cd python && python setup.py install
 
