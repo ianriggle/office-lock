@@ -9,7 +9,6 @@ RUN apt-get update && apt-get install -yq \
     python-dev \
     git \
     scons \
-    python-setuptools \
     swig && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
